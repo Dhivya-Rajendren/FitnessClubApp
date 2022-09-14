@@ -1,0 +1,25 @@
+﻿@page
+@model FitnessClubApp.Pages.NewCoachModel
+@{
+}
+
+<form method="post" >
+<table class="m-5">
+    <tr>
+        <td>Coach Name :</td><td><input asp-for="CoachPro.CoachName" id="txtName" name="txtName"/></td>
+
+    </tr>
+     <tr>
+        <td>Coach Type :</td><td><input asp-for="CoachPro.CoachType" id="txtType" name="txtType"/></td>
+    </tr>
+     <tr>
+        <td>Coach Email :</td><td><input asp-for="CoachPro.Email" id="txtEmail" name="txtEmail"/></td>
+    </tr>
+     <tr>
+        <td>Coach Phone :</td><td><input asp-for="CoachPro.Contact" id="txtPhone" name="txtPhone"/></td>
+    </tr>
+    <tr>
+        <td colspan=2><input type="submit" class="btn btn-primary"/></td>
+    </tr>
+</table>
+</form>
