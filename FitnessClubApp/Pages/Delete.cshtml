@@ -1,0 +1,12 @@
+﻿@page
+@model FitnessClubApp.Pages.DeleteModel
+@{
+}
+
+<div class="card w-25">
+   @await Component.InvokeAsync("CoachDetail",new {id=@Model.CoachPro.CoachId})
+    <div class="card-footer">
+  <p class="alert alert-success">Are you sure to delete the Coach Detail </p>      <a asp-page="Yes" asp-route-id=@Model.CoachPro.CoachId class="btn btn-secondary">Yes</a>
+  <a asp-page="Trainer" class="btn btn-danger">No</a>
+    </div>
+</div>

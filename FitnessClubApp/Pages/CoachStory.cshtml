@@ -4,15 +4,8 @@
 }
 
 <div class="card w-25">
-    <div class="card-body">
-        <img class="card-img" src="images/Person.jpg" alt="Coach"/>
-        <p class="card-text">@Model.CoachPro.CoachName</p>
-        <p class="card-text">@Model.CoachPro.CoachType
-        </p>
-        <p class="card-text">@Model.CoachPro.Email</p>
-        <p class="card-text">@Model.CoachPro.Contact</p>
+      @await Component.InvokeAsync("CoachDetail",new {id=@Model.CoachPro.CoachId})
 
-    </div>
     <div class="card-footer">
         <a asp-page="Trainer" class="btn btn-secondary">Back to Coaches</a>
     </div>

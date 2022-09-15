@@ -35,7 +35,7 @@ namespace FitnessClubApp.Models
         public List<Coach> GetCoaches()
         {
             List<Coach> coaches = new List<Coach>();
-            com = new SqlCommand("Select * from coaches", con);
+            com = new SqlCommand("Select * from coaches where isActive=1", con);
             reader = com.ExecuteReader();
             while(reader.Read())
             {
@@ -45,11 +45,19 @@ namespace FitnessClubApp.Models
                 coach.CoachType = reader.GetString(2);
                 coach.Email = reader.GetString(3);
                 coach.Contact = reader.GetInt32(4);
+                coach.CoachImage = reader.GetString(5);
                 coaches.Add(coach);
             }
 
             return coaches;
             
         }
+  
+    public int DeleteCoach(int id)
+        {
+            com = new SqlCommand("update coaches set isActive=0 where coachId=" + id, con);
+            return com.ExecuteNonQuery();
+        }
+    
     }
 }

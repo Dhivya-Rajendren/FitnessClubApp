@@ -5,27 +5,24 @@
 <div class="text-center">
     <p class=display-3>This is the Coaches Detail </p>
 
-    <table class="table table-bordered bg-gradient">
-        <tr>
-           
-            <th>Name</th>
-            <th>Type</th>
-            <th>Email</th>
-            <th>Contact</th>
-        </tr>
+    <div class="container">
+        <div class="row">
 
-        @foreach(var item in @Model.Coaches)
-        {
-            <tr>
-              
-                    <td><a asp-page="CoachStory" asp-route-id=@item.CoachId >@item.CoachName</a></td>
-                
-                        <td>@item.CoachType</td>
-                            <td>@item.Email</td>
-                                <td>@item.Contact</td>
-            </tr>
-        }
-    </table>
+            @foreach(var item in @Model.Coaches)
+            {
+            <div class="col-sm-3">
+            @await Component.InvokeAsync("CoachDetail",new {id=@item.CoachId})
 
-    <a asp-page="AddCoach" class="btn btn-primary">Add New Coach</a>
-</div>
+                <div class="card-footer">
+                    <a asp-page="CoachStory" asp-route-id=@item.CoachId class="btn btn-primary">View</a>
+                        <a asp-page="Edit" asp-route-id=@item.CoachId class="btn btn-secondary">Edit</a>
+                            <a asp-page="Delete" asp-route-id=@item.CoachId class="btn btn-danger">Delete</a>
+                    </div>
+            </div>    
+            
+            
+            }
+            </div>
+            </div>
+            </div>
+ 

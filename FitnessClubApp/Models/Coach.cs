@@ -9,9 +9,11 @@
         public string Email { get; set; }
         public int Contact { get; set; }
 
-      
+        public string CoachImage { get; set; }
 
 
 
-}
+
+
+    }
 }

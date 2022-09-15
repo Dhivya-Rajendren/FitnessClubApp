@@ -33,5 +33,10 @@ namespace FitnessClubApp.Models
         {
             throw new NotImplementedException();
         }
+
+        public int DeleteCoach(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

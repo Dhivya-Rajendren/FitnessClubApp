@@ -6,5 +6,6 @@
         Coach GetCoach(int coach);
 
         int AddNewCoach(Coach coach);
+        int DeleteCoach(int id);
     }
 }
